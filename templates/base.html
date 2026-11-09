@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}DevFlow{% endblock %}</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="{{ url_for('home') }}" class="logo">
+            Dev<span>Flow</span>
+        </a>
+
+        <div class="nav-links">
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('dashboard') }}">Dashboard</a>
+
+                <form action="{{ url_for('logout') }}"
+                      method="POST"
+                      class="logout-form">
+                    <button type="submit" class="logout-btn">
+                        Logout
+                    </button>
+                </form>
+            {% else %}
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('register') }}" class="nav-button">
+                    Get Started
+                </a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <main class="main-container">
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="flash-message">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 DevFlow. Built for developers.</p>
+    </footer>
+
+</body>
+</html>
