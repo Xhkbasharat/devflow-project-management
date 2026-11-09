@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Create Account | DevFlow{% endblock %}
+
+{% block content %}
+
+<section class="auth-section">
+
+    <div class="auth-card">
+
+        <div class="auth-icon">✦</div>
+
+        <h1>Create Your Account</h1>
+
+        <p class="auth-subtitle">
+            Join DevFlow and organize your work smarter.
+        </p>
+
+        <form method="POST" action="{{ url_for('register') }}">
+
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter your username"
+                    required
+                    minlength="3"
+                    maxlength="80"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Minimum 8 characters"
+                    minlength="8"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="primary-btn auth-submit">
+                Create Account
+            </button>
+
+        </form>
+
+        <p class="auth-footer">
+            Already have an account?
+            <a href="{{ url_for('login') }}">Sign In</a>
+        </p>
+
+    </div>
+
+</section>
+
+{% endblock %}
