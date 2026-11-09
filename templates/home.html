@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block title %}DevFlow | Manage Your Projects{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-content">
+        <span class="hero-tag">YOUR WORKSPACE, REIMAGINED</span>
+
+        <h1>
+            Build Better Projects.<br>
+            <span>Work Smarter.</span>
+        </h1>
+
+        <p>
+            Organize your projects, manage tasks, track progress,
+            and bring your team's ideas to life with DevFlow.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="{{ url_for('register') }}" class="primary-btn">
+                Get Started
+            </a>
+
+            <a href="{{ url_for('login') }}" class="secondary-btn">
+                Sign In
+            </a>
+        </div>
+
+        <div class="hero-stats">
+            <div>
+                <h3>01</h3>
+                <p>Create Projects</p>
+            </div>
+
+            <div>
+                <h3>02</h3>
+                <p>Manage Tasks</p>
+            </div>
+
+            <div>
+                <h3>03</h3>
+                <p>Track Progress</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-visual">
+        <div class="visual-card">
+            <div class="visual-header">
+                <span>● Project Overview</span>
+                <span>•••</span>
+            </div>
+
+            <div class="visual-item">
+                <span class="visual-icon">✦</span>
+                <div>
+                    <strong>Website Redesign</strong>
+                    <small>Development project</small>
+                </div>
+                <span class="status-badge">Active</span>
+            </div>
+
+            <div class="progress-label">
+                <span>Project Progress</span>
+                <strong>75%</strong>
+            </div>
+
+            <div class="progress-track">
+                <div class="progress-fill"></div>
+            </div>
+
+            <div class="visual-bottom">
+                <div>
+                    <strong>12</strong>
+                    <small>Total Tasks</small>
+                </div>
+
+                <div>
+                    <strong>08</strong>
+                    <small>Completed</small>
+                </div>
+
+                <div>
+                    <strong>04</strong>
+                    <small>Remaining</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="features-section">
+
+    <div class="section-heading">
+        <span class="hero-tag">WHY DEVFLOW?</span>
+        <h2>Everything in one workspace.</h2>
+        <p>Simple tools to keep your development work organized.</p>
+    </div>
+
+    <div class="features-grid">
+
+        <div class="feature-card">
+            <div class="feature-icon">📁</div>
+            <h3>Project Management</h3>
+            <p>Create and organize all your projects in one place.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">✓</div>
+            <h3>Task Tracking</h3>
+            <p>Create tasks, set priorities, and update their status.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Progress Overview</h3>
+            <p>Track completed and pending tasks easily.</p>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
