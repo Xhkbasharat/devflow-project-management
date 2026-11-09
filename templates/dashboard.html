@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | DevFlow{% endblock %}
+
+{% block content %}
+
+<section class="dashboard">
+
+    <div class="dashboard-header">
+        <div>
+            <span class="hero-tag">WORKSPACE</span>
+            <h1>Welcome back, {{ current_user.username }}!</h1>
+            <p>Manage your projects and keep your work moving.</p>
+        </div>
+    </div>
+
+    <!-- STATISTICS -->
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <span class="stat-icon">📁</span>
+            <h2>{{ projects|length }}</h2>
+            <p>Total Projects</p>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-icon">📋</span>
+            <h2>{{ total_tasks }}</h2>
+            <p>Total Tasks</p>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-icon">✓</span>
+            <h2>{{ completed_tasks }}</h2>
+            <p>Completed Tasks</p>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-icon">⏳</span>
+            <h2>{{ total_tasks - completed_tasks }}</h2>
+            <p>Remaining Tasks</p>
+        </div>
+
+    </div>
+
+    <!-- CREATE PROJECT -->
+
+    <div class="create-project-card">
+
+        <div>
+            <h2>Create a New Project</h2>
+            <p>Start organizing your next big idea.</p>
+        </div>
+
+        <form method="POST"
+              action="{{ url_for('create_project') }}"
+              class="project-form">
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Enter project name"
+                maxlength="150"
+                required
+            >
+
+            <input
+                type="text"
+                name="description"
+                placeholder="Short project description"
+            >
+
+            <button type="submit" class="primary-btn">
+                + Create Project
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- PROJECT LIST -->
+
+    <div class="projects-section">
+
+        <div class="section-heading">
+            <h2>Your Projects</h2>
+            <p>All your active work in one place.</p>
+        </div>
+
+        {% if projects %}
+
+        <div class="projects-grid">
+
+            {% for project in projects %}
+
+            <div class="project-card">
+
+                <div class="project-card-top">
+                    <span class="project-icon">✦</span>
+                    <span class="project-label">PROJECT</span>
+                </div>
+
+                <h3>{{ project.name }}</h3>
+
+                <p>
+                    {{ project.description or "No description provided." }}
+                </p>
+
+                <div class="project-meta">
+                    <span>{{ project.tasks|length }} Tasks</span>
+                    <span>
+                        {{ project.tasks|selectattr("status", "equalto", "Done")|list|length }}
+                        Completed
+                    </span>
+                </div>
+
+                <a href="{{ url_for('project_detail', project_id=project.id) }}"
+                   class="secondary-btn">
+                    Open Project →
+                </a>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="empty-state">
+            <div class="empty-icon">📂</div>
+            <h3>No projects yet</h3>
+            <p>Create your first project to get started with DevFlow.</p>
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}
