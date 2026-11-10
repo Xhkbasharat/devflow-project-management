@@ -1,22 +1,46 @@
 
-MIT License
+PROPRIETARY SOFTWARE LICENSE
+ALL RIGHTS RESERVED
 
-Copyright (c) 2026 DevFlow Contributors
+Copyright (c) 2026 Sheikh Basharat 
+All Rights Reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. OWNERSHIP
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+All source code, software, designs, documentation, graphics, and
+associated materials in this repository are the intellectual property
+of the respective copyright owner, unless otherwise stated.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. RESTRICTIONS
+
+No person or organization may, without prior written permission from
+the copyright owner:
+
+- Copy or reproduce this software.
+- Modify, adapt, or create derivative works.
+- Distribute, publish, or sublicense any part of this repository.
+- Sell, rent, or commercially exploit this software.
+- Use associated branding, trademarks, or proprietary assets.
+
+3. NO LICENSE GRANTED
+
+Viewing or accessing this repository does not grant any ownership
+rights or permission to use, copy, modify, or distribute its contents.
+
+4. THIRD-PARTY MATERIALS
+
+Third-party libraries, tools, assets, and dependencies remain subject
+to their respective licenses and terms.
+
+5. NO WARRANTY
+
+This software is provided "AS IS", without warranties of any kind,
+to the maximum extent permitted by applicable law.
+
+6. PERMISSION AND ENFORCEMENT
+
+Any exception requires prior written authorization from the
+copyright owner. Unauthorized use or distribution may result in
+legal action where permitted by applicable law.
+
+END OF LICENSE
